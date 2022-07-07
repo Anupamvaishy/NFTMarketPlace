@@ -14,6 +14,25 @@ NFTMarketPlace is Place  where people come and mint the nft and put it on sell a
 
 
 
+## Work Flow
+
+# We need Two function to interact with the contract
+
+-  function createMarketItem().
+-  function createMarketSale().
+
+ How to mint NFT in the contract ?
+  -
+  We have a function called createMarketItem(). With the help of this function we mint the NFT in MarketPlace and putting it for sale.
+
+How to Buy or sell NFT which is already present in Market Palce ?
+   -
+   We have a function called createMarketSale(). With the help of this Function we can buy and sell NFT which is already present in Market Palce.
+
+   
+
+
+
 ## Running Tests
 
 To run tests, You have to go terminal and run the following command
