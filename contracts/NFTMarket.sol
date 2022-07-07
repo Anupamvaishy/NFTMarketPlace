@@ -98,19 +98,20 @@ contract NFTMarket is ReentrancyGuard {
     }
 
 
-   /* Returns all unsold market items */
+   /* Returns all unsold items */
     function fetchMarketItems() public view returns (MarketItem[] memory) {
-      uint itemCount = _itemIds.current();
-      uint unsoldItemCount = _itemIds.current() - _itemsSold.current();
-      uint currentIndex = 0;
-
+      uint itemCount = _itemIds.current();//itemCount variable store itemId of current item. 
+      uint unsoldItemCount = _itemIds.current() - _itemsSold.current();//This line store number of item which is unsold in variable name unsoldItemCount.
+      uint currentIndex = 0; 
+    /*Create an empty array which store marketItem*/
       MarketItem[] memory items = new MarketItem[](unsoldItemCount);
       for (uint i = 0; i < itemCount; i++) {
+        /**Check if this item is unsold or not */
         if (idToMarketItem[i + 1].owner == address(this)) {
-          uint currentId = idToMarketItem[i + 1].itemId ;
-          MarketItem storage currentItem = idToMarketItem[currentId];
-          items[currentIndex] = currentItem;
-          currentIndex += 1;
+          uint currentId = idToMarketItem[i + 1].itemId ;//currentId of a item which interacting right now
+          MarketItem storage currentItem = idToMarketItem[currentId];//Create a value called currentItem that's going to go and get the mapping of the idToMarketItem passing in the current id
+          items[currentIndex] = currentItem;//Insert that item into an array
+          currentIndex += 1;//Increment currentItem
         }
       }
       return items;
