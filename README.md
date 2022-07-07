@@ -1,15 +1,33 @@
-# Basic Sample Hardhat Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+# NFTMarketPlace
 
-Try running some of the following tasks:
+NFTMarketPlace is Place  where people come and mint the nft and put it on sell and anyone can buy that nft.
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+
+
+
+## Features
+-  function getListingPrice-This function gives the listing price. 
+-  function createMarketItem:-This function Mint the NFT in MarketPlace and putting it for sale.
+-  function createMarketSale:-This function help us where we can buy and sell NFT.
+-  function fetchMarketItems:-Give list of  all unsold NFT
+
+
+
+## Running Tests
+
+To run tests, You have to go terminal and run the following command
+
+```bash
+  npx hardhat test
+```
+
+
+## Deployment
+
+To deploy this project.You have to go in terminal and run these command
+
+```bash
+  npx hardhat run scripts/deploy.js --network mumbai
+  
 ```
